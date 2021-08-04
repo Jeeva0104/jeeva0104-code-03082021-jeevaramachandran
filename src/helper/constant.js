@@ -11,13 +11,13 @@ const BMI_RANGE = {
     min: 18.5,
     max: 24.9,
     bmi_category: "Normal weight",
-    health_risk: "Low risk,",
+    health_risk: "Low risk",
   },
   VERY_MEDIUM: {
     min: 25,
     max: 29.9,
     bmi_category: "Overweight",
-    health_risk: "Enhanced risk,",
+    health_risk: "Enhanced risk",
   },
   MEDIUM: {
     min: 30,
