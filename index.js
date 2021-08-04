@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const { port, hostName } = require("./config");
-console.log(port);
+console.log(hostName, port);
 async function main() {
   app.use(express.json({ limit: "50mb" }));
 

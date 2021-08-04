@@ -1,7 +1,7 @@
 const { convertbmi, checkRiskFactor } = require("../helper/utils");
-const calculateBMI = (req) => {
+const calculateBMI = (body) => {
   try {
-    let data = req.body || [];
+    let data = body || [];
     const result = [];
     const invalid = [];
     data.forEach((element) => {

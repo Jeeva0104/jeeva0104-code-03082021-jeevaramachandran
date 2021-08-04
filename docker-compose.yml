@@ -1,0 +1,23 @@
+version: "3"
+services:
+  traefik:
+    image: traefik:v1.7
+    command: --web --api --docker --docker.domain=docker.localhost
+    ports:
+      - "80:80"
+      - "8084:8080"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+  server:
+    build:
+      context: "${PROJECT_DIR}"
+    labels:
+      - "traefik.backend=server"
+      - "traefik.frontend.port=8000"
+      - "traefik.frontend.rule=Host:localhost;PathPrefixStrip:/api"
+    volumes:
+      - "${PROJECT_DIR}:/usr/src/app"
+    ports:
+      - "8000:8000"
+    depends_on:
+      - traefik
