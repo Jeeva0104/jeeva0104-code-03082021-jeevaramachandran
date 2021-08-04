@@ -4,6 +4,7 @@
 
 - `git`
 - `npm` or `yarn`
+- `docker`
 
 ### Steps to Run the Project
 
