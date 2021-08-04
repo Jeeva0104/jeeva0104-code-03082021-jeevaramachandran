@@ -26,7 +26,7 @@ npm run test
 
 ### Health Check API
 
-http://`url`/api/health
+http://0.0.0.0:8000/api/health
 
 ### Stable Branch
 
@@ -34,4 +34,4 @@ Branch name:`master`
 
 ### Swagger API Documentation
 
-http://`url`/api/docs
+http://0.0.0.0:8000/api/docs
