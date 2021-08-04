@@ -26,7 +26,7 @@ npm run test
 
 ### Health Check API
 
-http://0.0.0.0:8000/api/health
+http://`url`/api/health
 
 ### Stable Branch
 
