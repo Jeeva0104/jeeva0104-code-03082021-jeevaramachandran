@@ -1,0 +1,29 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/jeeva0104-code-03082021-jeevaramachandran
+    docker:
+      - image: cimg/node:current-browsers
+    steps:
+      - checkout
+      - run: node --version
+      - restore_cache:
+          key: dependency-cache-{{checksum "package.json"}}
+      - run:
+          name: install-npm
+          command: npm install && echo "Node modules are installed"
+      - save_cache:
+          key: dependency-cache-{{checksum "package.json"}}
+          paths:
+            - node_modules
+      - run:
+          name: Run all the test cases
+          command: npm run test
+workflows:
+  version: 2
+  production_and_development:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only: master
